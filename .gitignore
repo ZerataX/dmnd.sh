@@ -1,3 +1,6 @@
+# ignore distributed website
+dist/
+
 # Logs
 logs
 *.log

@@ -17,25 +17,34 @@
   "contributors": [
     "Jona Abdinghoff <mail@zera.tax>"
   ],
+  "browserify": {
+    "transform": [
+        ["babelify", {
+          "presets": ["env"]
+        }]
+    ]
+  },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^16.2.0",
     "eslint": "^4.19.1",
-    "livereload": "^0.7.0",
+    "http-server": "^0.11.1",
+    "live-server": "^1.2.0",
     "mocha": "^5.1.1",
     "node-sass": "^4.8.3",
     "parallelshell": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6",
     "pug-lint": "^2.5.0",
     "pug-lint-config-clock": "^2.0.0",
+    "puglint-stylish": "^0.1.1",
     "sass-lint": "^1.12.1",
     "sass-true": "^4.0.0",
-    "uglifyify": "^4.0.5"
+    "simplifyify": "^4.0.2",
+    "uglifyify": "^4.0.5",
+    "watchify": "^3.11.0"
   },
   "bugs": {
     "url": "https://github.com/zeratax/dmnd.sh/issues"
@@ -43,19 +52,19 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "setup": "npm run clean && mkdir -p ./dist",
-    "build:css": "node-sass src/assets/styles/main.sass --output-style compressed -o dist/main.css",
-    "watch:css": "node-sass src/assets/styles/main.sass -w -o dist/main.css",
-    "lint:css": "sass-lint",
-    "build:js": "browserify src/scripts/index.js -t babelify -t uglifyify -o dist/bundle.js",
-    "watch:js": "watchify src/scripts/index.js -t babelify -o dist/bundle.js",
-    "lint:js": "eslint src/scripts/**",
+    "build:css": "node-sass src/styles/main.sass --output-style compressed -o dist/",
+    "watch:css": "node-sass src/styles/main.sass -w --output-style nested -o dist/",
+    "lint:css": "sass-lint -c .sasslintrc",
+    "build:js": "simplifyify src/scripts/index.js -t babelify -t uglifyify -o dist/bundle.js",
+    "watch:js": "simplifyify src/scripts/index.js -w -t babelify -o dist/bundle.js",
+    "lint:js": "eslint src/scripts/** --fix",
     "build:html": "pug src/views/*.pug -o dist/",
     "watch:html": "pug src/views/*.pug -w -o dist/",
     "lint:html": "pug-lint src/views/*.pug",
     "build": "npm run build:css && npm run build:js && npm run build:html",
-    "build:watch": "parallelshell 'npm run watch:css' 'npm run watch:js' 'npm run watch:html'",
-    "start": "http-server",
-    "livereload": "live-reload --port 9091 dist/",
+    "watch": "parallelshell 'npm run watch:css' 'npm run watch:js' 'npm run watch:html'",
+    "start": "http-server dist/",
+    "live": "live-server dist/",
     "deploy": "npm run setup && npm run build",
     "test": "mocha",
     "lint": "npm run lint:css && npm run lint:js && npm run lint:html",
