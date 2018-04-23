@@ -1,0 +1,45 @@
+html
+  head
+    block meta
+      title 💎 dmnd.sh - #{title}
+      meta(charset='UTF-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+      meta(property='og:title', content=title)
+      meta(property='og:url', content='https://dmnd.sh.com/' + title + '.html')
+      meta(property='og:site_name', content='💎 diamonds')
+      meta(property='og:type', content='website')
+      if cover
+        meta(property='og:image', content=image)
+      if description
+        meta(property='og:description', content=description)
+
+    block styles
+      link(rel='stylesheet', href='/main.css', type='text/css')
+    block scripts
+      script(src='/bundle.js')
+
+  body
+    #header
+      h1 ♦
+      pre
+        code
+          include ../partials/title.pug
+      hr
+      .nav
+        | ║▒░ 
+        a(href='/about.html') about
+        |  ║▒░ 
+        a(href='/chat.html') chat
+        |  ░▒║ 
+        a(href='/contact.html') contact
+        |  ░▒║
+    #content
+      .center
+        block content
+    block foot
+      hr
+      #footer
+        h4
+        | ░▒║ provided by 
+        a(href='//zera.tax') zeratax
+        |  ║▒░

@@ -1,4 +1,7 @@
-extends layout.pug
+extends layouts/default.pug
+
+block prepend meta
+  - var title = 'index';
 
 block content
   h2 Welcome to diamonds!
