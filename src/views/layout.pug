@@ -1,0 +1,32 @@
+html
+  head
+    title 💎dmnd.sh - #{title}
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    block scripts
+      script(src:'bundle.js')
+  body
+    #header
+      h1 ♦
+      pre
+        code
+          include title.pug
+      hr
+      .nav
+        | ║▒░
+        a(href='/about.html') about
+        |  ║▒░
+        a(href='/chat.html') chat
+        |  ░▒║
+        a(href='/contact.html') contact
+        |  ░▒║
+    .center
+      .content
+        block content
+    block foot
+      hr
+      #footer
+        h4
+        | ░▒║ provided by 
+        a(href='//zera.tax') zeratax
+        |  ║▒░
