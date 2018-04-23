@@ -58,7 +58,7 @@
     "clean": "rm -rf ./dist",
     "setup": "npm run clean && mkdir -p ./dist",
     "build:css": "node-sass src/styles/main.sass --output-style compressed -o dist/",
-    "watch:css": "node-sass src/styles/main.sass -w --output-style nested -o dist/",
+    "watch:css": "node-sass src/styles/main.sass -w --output-style expanded -o dist/",
     "lint:css": "sass-lint -c .sasslintrc",
     "build:js": "simplifyify src/scripts/index.js -t babelify -t uglifyify -o dist/bundle.js",
     "watch:js": "simplifyify src/scripts/index.js -w -t babelify -o dist/bundle.js",
