@@ -1,0 +1,77 @@
+@import "colors"
+@import "fonts"
+@import "animations"
+
+body
+  background: $background-color
+  color: $foreground-color
+  font-family: $font-stack
+  overflow-x: hidden
+
+h1
+  font-weight: 300
+
+h4
+  font-weight: 100
+
+a
+  color: $link-color
+  &:link
+    color: $link-color
+
+code
+  font-size: 0.8em
+
+#header
+  text-align: center
+
+#content
+  display: flex
+  flex-direction: column
+  pre
+    margin: 0px
+    width: 300px
+    height: 600px
+
+#footer
+  text-align: center
+
+.nav
+  font-weight: 500
+  font-size: 1.2em
+  white-space: nowrap
+
+.center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+.shimmer
+  margin: 0 auto
+  padding: 0 140px 0 0
+  display: inline
+  margin-bottom: 0
+  text-align: center
+  color: rgba(255, 255, 255, 0.2)
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff))
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff))
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff))
+  -webkit-background-size: 125px 100%
+  -moz-background-size: 125px 100%
+  background-size: 125px 100%
+  -webkit-background-clip: text
+  -moz-background-clip: text
+  background-clip: text
+  -webkit-animation-name: shimmer
+  -moz-animation-name: shimmer
+  animation-name: shimmer
+  -webkit-animation-duration: 5s
+  -moz-animation-duration: 5s
+  animation-duration: 5s
+  -webkit-animation-iteration-count: infinite
+  -moz-animation-iteration-count: infinite
+  animation-iteration-count: infinite
+  background-repeat: no-repeat
+  background-position: 0 0
+  background-color: #222

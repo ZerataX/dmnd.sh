@@ -3,8 +3,10 @@ html
     title 💎dmnd.sh - #{title}
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    block styles
+      link(rel='stylesheet', href='/main.css', type='text/css')
     block scripts
-      script(src:'bundle.js')
+      script(src='/bundle.js')
   body
     #header
       h1 ♦
@@ -20,8 +22,8 @@ html
         |  ░▒║
         a(href='/contact.html') contact
         |  ░▒║
-    .center
-      .content
+    #content
+      .center
         block content
     block foot
       hr
