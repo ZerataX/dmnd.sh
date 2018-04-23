@@ -1,18 +1,22 @@
-@import "colors"
-@import "fonts"
-@import "animations"
+@import "partials/base"
+
+@import "partials/colors"
+@import "partials/animations"
 
 body
   background: $background-color
   color: $foreground-color
-  font-family: $font-stack
+  font-family: $fixed-font-family
   overflow-x: hidden
 
 h1
-  font-weight: 300
+  font-weight: $bold
+
+h2, h3
+  font-weight: $regular
 
 h4
-  font-weight: 100
+  font-weight: $light
 
 a
   color: $link-color
@@ -20,9 +24,10 @@ a
     color: $link-color
 
 code
-  font-size: 0.8em
+  font-family: $fixed-font-family
 
 #header
+  font-weight: $header-font-weight
   text-align: center
 
 #content
@@ -47,31 +52,3 @@ code
   justify-content: center
   align-items: center
 
-.shimmer
-  margin: 0 auto
-  padding: 0 140px 0 0
-  display: inline
-  margin-bottom: 0
-  text-align: center
-  color: rgba(255, 255, 255, 0.2)
-  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff))
-  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff))
-  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff))
-  -webkit-background-size: 125px 100%
-  -moz-background-size: 125px 100%
-  background-size: 125px 100%
-  -webkit-background-clip: text
-  -moz-background-clip: text
-  background-clip: text
-  -webkit-animation-name: shimmer
-  -moz-animation-name: shimmer
-  animation-name: shimmer
-  -webkit-animation-duration: 5s
-  -moz-animation-duration: 5s
-  animation-duration: 5s
-  -webkit-animation-iteration-count: infinite
-  -moz-animation-iteration-count: infinite
-  animation-iteration-count: infinite
-  background-repeat: no-repeat
-  background-position: 0 0
-  background-color: #222

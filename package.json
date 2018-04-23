@@ -19,9 +19,14 @@
   ],
   "browserify": {
     "transform": [
-        ["babelify", {
-          "presets": ["env"]
-        }]
+      [
+        "babelify",
+        {
+          "presets": [
+            "env"
+          ]
+        }
+      ]
     ]
   },
   "devDependencies": {
@@ -70,5 +75,8 @@
     "lint": "npm run lint:css && npm run lint:js && npm run lint:html",
     "prebuild": "npm run test",
     "pretest": "npm run lint"
+  },
+  "dependencies": {
+    "stylish": "^1.0.0"
   }
 }
