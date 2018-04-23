@@ -1,0 +1,51 @@
+{
+  "author": "ZerataX <mail@zera.tax> (https://zera.tax)",
+  "name": "dmnd.sh",
+  "description": "public website of dmnd.sh",
+  "version": "0.0.1",
+  "homepage": "https://dmnd.sh",
+  "keywords": [
+    "diamonds",
+    "dmnd.sh",
+    "website",
+    "homepage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zeratax/dmnd.sh.git"
+  },
+  "contributors": [
+    "Jona Abdinghoff <mail@zera.tax>"
+  ],
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.8.3",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "devDependencies": {
+    "livereload": "^0.7.0",
+    "parallelshell": "^3.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/zeratax/dmnd.sh/issues"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "setup": "npm run clean && mkdir -p ./dist",
+    "build:css": "node-sass src/assets/styles/main.sass -o dist/",
+    "watch:css": "node-sass src/assets/styles/main.sass -w -o dist/",
+    "build:js": "babel src/assets/scripts -d dist/",
+    "watch:js": "babel-watch src/assets/scripts -d dist/",
+    "build:html": "pug src/views/*.pug -o dist/",
+    "watch:html": "pug src/views/*.pug -w -o dist/",
+    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "build:watch": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html'",
+    "livereload": "live-reload --port 9091 dist/",
+    "deploy": "npm run setup && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"Error: no linting specified\" && exit 1",
+    "prebuild": "npm run test",
+    "pretest": "npm run lint"
+  }
+}
