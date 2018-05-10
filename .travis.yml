@@ -4,8 +4,6 @@ addons:
   - "$SERVER"
 install:
   - npm install
-before_script:
-  - ssh -o "StrictHostKeyChecking no" hostname
 script:
   - npm run setup
   - npm run build
