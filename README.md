@@ -23,7 +23,7 @@ to have the system rebuild on file change and reload your browser execute these 
 
 if you want to contribute please install the pre-commit script, execute the following scripts in the root of the repository
 ```
-  ln -s ../../pre-commit.sh .git/hooks/pre-commit
+  ln -s ../../scripts/pre-commit.sh .git/hooks/pre-commit
   chmod +x pre-commit.sh
 ```
 
