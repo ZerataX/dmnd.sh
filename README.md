@@ -1,4 +1,4 @@
-# dmnd.sh
+# dmnd.sh [![Build Status](https://travis-ci.org/ZerataX/dmnd.sh.svg?branch=master)](https://travis-ci.org/ZerataX/dmnd.sh)
 [dmnd.sh](https://dmnd.sh) website
 
 ## build

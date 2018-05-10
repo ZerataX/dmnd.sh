@@ -1,4 +1,3 @@
-# pre-commit.sh
 git stash -q --keep-index
 npm run test
 RESULT=$?
