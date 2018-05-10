@@ -1,0 +1,2 @@
+rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist $SERVER_USER@$SERVER:$SERVER_DIR
+ssh $SERVER_USER@$SERVER:$SERVER_DIR chmod 0755 $SERVER_DIR -R
