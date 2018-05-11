@@ -29,10 +29,8 @@
       ]
     ]
   },
-  "dependencies": {
-    "stylish": "^1.0.0"
-  },
   "devDependencies": {
+    "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
@@ -42,6 +40,7 @@
     "mocha": "^5.1.1",
     "node-sass": "^4.8.3",
     "parallelshell": "^3.0.2",
+    "postcss-cli": "^5.0.0",
     "pug-cli": "^1.0.0-alpha6",
     "pug-lint": "^2.5.0",
     "pug-lint-config-clock": "^2.0.0",
@@ -58,9 +57,9 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "setup": "npm run clean && mkdir -p ./dist",
-    "build:css": "node-sass src/styles/main.sass --output-style compressed -o dist/",
+    "build:css": "node-sass src/styles/main.sass --output-style compressed -o dist/ && npx postcss dist/*.css --use autoprefixer -d dist/",
     "watch:css": "node-sass src/styles/main.sass -w --output-style expanded -o dist/",
-    "lint:css": "sass-lint -c .sasslintrc",
+    "lint:css": "sass-lint -c .sass-lint.yml",
     "build:js": "simplifyify src/scripts/index.js -t babelify -t uglifyify -o dist/bundle.js",
     "watch:js": "simplifyify src/scripts/index.js -w -t babelify -o dist/bundle.js",
     "lint:js": "eslint src/scripts/**",
@@ -76,5 +75,8 @@
     "lint": "npm run lint:css && npm run lint:js && npm run lint:html",
     "prebuild": "npm run test",
     "pretest": "npm run lint"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
   }
 }

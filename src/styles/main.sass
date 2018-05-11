@@ -1,7 +1,8 @@
-@import "partials/base"
+@import 'partials/base'
 
-@import "partials/colors"
-@import "partials/animations"
+@import 'partials/colors'
+@import 'partials/animations'
+
 
 body
   background: $background-color
@@ -12,7 +13,8 @@ body
 h1
   font-weight: $bold
 
-h2, h3
+h2,
+h3
   font-weight: $regular
 
 h4
@@ -20,35 +22,36 @@ h4
 
 a
   color: $link-color
+
   &:link
     color: $link-color
 
 code
   font-family: $fixed-font-family
 
-#header
+.header
   font-weight: $header-font-weight
   text-align: center
 
-#content
+.content
   display: flex
   flex-direction: column
-  pre
-    margin: 0px
-    width: 300px
-    height: 600px
 
-#footer
+  pre
+    height: 600px
+    margin: 0
+    width: 300px
+
+.footer
   text-align: center
 
 .nav
-  font-weight: 500
   font-size: 1.2em
+  font-weight: 500
   white-space: nowrap
 
 .center
+  align-items: center
   display: flex
   flex-direction: column
   justify-content: center
-  align-items: center
-
