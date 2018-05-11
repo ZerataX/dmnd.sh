@@ -2,10 +2,11 @@ options:
   formatter: stylish
   merge-default-rules: true
 files:
-  include: 'src/styles/**/*.s+(a|c)ss'
+  include:
+    - 'src/styles/**/*.s+(a|c)ss'
   ignore:
-    - 'sass/vendor/**/*.scss'
-    - 'sass/tests/**/*.scss'
+    - 'src/styles/vendor/**/*..s+(a|c)ss'
+    - 'tests/**/*.s+(a|c)ss'
 rules:
   border-zero:
     - 2

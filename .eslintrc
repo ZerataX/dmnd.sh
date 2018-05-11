@@ -1,8 +1,12 @@
 {
     "parser": "babel-eslint",
+    "plugins": [
+      "mocha"
+    ],
     "rules": {
         "strict": 0,
-        "no-console": 1
+        "no-console": 1,
+        "mocha/no-exclusive-tests": "error"
     },
     "extends": "eslint:recommended",
     "env": {
