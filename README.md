@@ -1,4 +1,4 @@
-# dmnd.sh [![Build Status](https://travis-ci.org/ZerataX/dmnd.sh.svg?branch=master)](https://travis-ci.org/ZerataX/dmnd.sh) [![Dependency Status](https://david-dm.org/sasstools/sass-lint.svg)](https://david-dm.org/sasstools/sass-lint#info=dependencies&view=list) [![Dev Dependency Status](https://david-dm.org/sasstools/sass-lint/dev-status.svg)](https://david-dm.org/sasstools/sass-lint#info=devDependencies&view=list)
+# dmnd.sh [![Build Status](https://travis-ci.org/ZerataX/dmnd.sh.svg?branch=master)](https://travis-ci.org/ZerataX/dmnd.sh) [![Dependency Status](https://david-dm.org/sasstools/sass-lint.svg)](https://david-dm.org/sasstools/sass-lint#info=dependencies&view=list) [![Dev Dependency Status](https://david-dm.org/sasstools/sass-lint/dev-status.svg)](https://david-dm.org/sasstools/sass-lint#info=devDependencies&view=list) [![Coverage Status](https://coveralls.io/repos/github/ZerataX/dmnd.sh/badge.svg?branch=master)](https://coveralls.io/github/ZerataX/dmnd.sh?branch=master)
 
 [dmnd.sh](https://dmnd.sh) main website
 

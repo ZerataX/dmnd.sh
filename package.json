@@ -77,7 +77,7 @@
     "deploy": "npm run setup && npm run build",
     "test": "NODE_ENV=test mocha --require babel-register",
     "cover": "nyc --require babel-core/register npm test",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "lint": "npm run lint:css && npm run lint:js && npm run lint:html",
     "prebuild": "npm run test",
     "pretest": "npm run lint"
