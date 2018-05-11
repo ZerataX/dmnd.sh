@@ -1,2 +1,1 @@
-export default "Hello   World";
-
+export default "DIAMONDS";

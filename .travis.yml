@@ -1,12 +1,14 @@
-language: javascript
+language: node_js
+node_js:
+- "stable"
 addons:
   ssh_known_hosts:
   - "$SERVER"
 install:
-  - npm install
+- npm install
 script:
-  - npm run setup
-  - npm run build
+- npm run setup
+- npm run build
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_33acfc4c9d13_key -iv $encrypted_33acfc4c9d13_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"
@@ -18,3 +20,5 @@ deploy:
   script: bash scripts/deploy.sh
   on:
     branch: master
+after_success:
+- npm run coveralls
