@@ -53,7 +53,7 @@
     "sass-lint": "^1.12.1",
     "sass-true": "^4.0.0",
     "simplifyify": "^4.0.2",
-    "uglifyify": "^4.0.5",
+    "uglifyify": "^5.0.0",
     "watchify": "^3.11.0"
   },
   "bugs": {
