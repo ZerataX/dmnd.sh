@@ -73,7 +73,6 @@
     "lint:html": "pug-lint src/views/**/*.pug",
     "build": "npm run build:css && npm run build:js && npm run build:html",
     "watch": "parallelshell \"npm run watch:css\" \"npm run watch:js\" \"npm run watch:html\"",
-    "start": "http-server dist/",
     "live": "live-server dist/",
     "deploy": "npm run setup && npm run build",
     "test": "NODE_ENV=test mocha --require babel-register",
@@ -82,8 +81,5 @@
     "lint": "npm run lint:css && npm run lint:js && npm run lint:html",
     "prebuild": "npm run test",
     "pretest": "npm run lint"
-  },
-  "dependencies": {
-    "http-server": "^0.11.1"
   }
 }

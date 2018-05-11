@@ -7,10 +7,9 @@
 ```
   npm install
   npm run deploy
-  npm start
 ```
 
-instead of npm start you can also just put it in your public nginx folder or w/e.
+and then put `dist/` in your public nginx folder or w/e.
 
 ## develop
 
