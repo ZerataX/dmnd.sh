@@ -22,13 +22,13 @@ html
       script(src='/bundle.js')
 
   body
-    .header
+    header
       h1 ♦
       pre
         code
           include ../partials/title.pug
       hr
-      .nav
+      nav
         | ║▒░ 
         a(href='/about.html') about
         |  ║▒░ 
@@ -36,13 +36,13 @@ html
         |  ░▒║ 
         a(href='/contact.html') contact
         |  ░▒║
-    .content
+    section
       .center
         block content
-    block foot
-      hr
-      .footer
+    block footer
+      footer
+        hr
         h4
-        | ░▒║ provided by 
-        a(href='//zera.tax') zeratax
-        |  ║▒░
+          | ░▒║ provided by 
+          a(href='//zera.tax') zeratax
+          |  ║▒░
