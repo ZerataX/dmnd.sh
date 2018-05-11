@@ -57,7 +57,7 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "setup": "npm run clean && mkdir -p ./dist",
-    "build:css": "node-sass src/styles/main.sass --output-style compressed -o dist/ && npx postcss dist/*.css --use autoprefixer -d dist/",
+    "build:css": "node-sass src/styles/main.sass --output-style compressed -o dist/ && npx postcss dist/*.css --use autoprefixer",
     "watch:css": "node-sass src/styles/main.sass -w --output-style expanded -o dist/",
     "lint:css": "sass-lint -c .sass-lint.yml",
     "build:js": "simplifyify src/scripts/index.js -t babelify -t uglifyify -o dist/bundle.js",
