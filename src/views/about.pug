@@ -1,0 +1,37 @@
+extends layouts/default.pug
+
+block prepend meta
+  - var title = 'about';
+  - var description = 'diamonds is a small circle centered around almost anything'
+
+block content
+  h2 about diamonds
+  p
+    | diamonds is a small circle centered around almost anything
+    br
+    | we provide several small services free of charge
+  pre
+    h3 services
+    h4 messaging
+    p
+      | We host a 
+      a(href='/chat.html') matrix homeserver
+      br
+      | if you received an invite token, 
+      | you can register an account on our homeserver on the 
+      a(href='/register.html') register page
+    p
+      | the homeserver is bridged to both discord and telegram.
+      | futhermore you can puppet your telegram account from matrix.
+      | for more information visit the 
+      a(href='/bridge.html') bridge guide page
+    p enjoy video chat over with our jitsi instance 
+      a(href='//jitsi.dmnd.sh') jitsi.dmnd.sh
+    h4 productive
+    p make use of our etherpad instance over at 
+      a(href='//docs.dmnd.sh') docs.dmnd.sh
+    h4 gaming
+    p
+      | you can also join us on our factorio server
+      | just connect to 
+      em dmnd.sh

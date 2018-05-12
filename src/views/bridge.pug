@@ -1,0 +1,49 @@
+extends layouts/default.pug
+
+block prepend meta
+  - var title = 'bridge';
+  - var description = 'bridge matrix to other messengers'
+
+block content
+  h2 bridge guide
+  p bridge matrix to other messengers, e.g. discord and telegram
+  pre
+    h3 relay bridge
+    ul
+      li telegram
+        ul
+          li invite
+            ul
+              li
+                a(href='//t.me/dmndsh_bot') telegram bot
+              li
+                a(href='//matrix.to/#/@_telegram_bot:dmnd.sh') matrix bot
+          li execute 
+            code.hljs
+              :highlight
+                /id
+            |  in the telegram channel to get the id
+          li execute 
+            code.hljs
+              :highlight
+                !telegram bridge <Telegram chat ID> [Matrix room ID]
+            |  in the matrix channel
+      li discord
+        ul
+          li invite 
+            a(href='//discordapp.com/oauth2/authorize?client_id=437370449471471618&scope=bot&permissions=607243264') discord bot
+          li follow the guide by executing
+            code.hljs
+              :highlight
+                !discord help bridge
+            |  in the matrix channel
+    h3 puppetting bridge
+    p
+      | additionaly you can puppet your telegram account with your matrix account,
+      | just message: 
+      a(href='//matrix.to/#/@_telegram_bot:dmnd.sh') @_telegram_bot:dmnd.sh
+      |  with 
+      code.hljs
+        :highlight
+          help
+      |  for more information

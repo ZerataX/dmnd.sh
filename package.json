@@ -54,7 +54,8 @@
     "sass-true": "^4.0.0",
     "simplifyify": "^4.0.2",
     "uglifyify": "^5.0.0",
-    "watchify": "^3.11.0"
+    "watchify": "^3.11.0",
+    "jstransformer-highlight": "^1.0.1"
   },
   "bugs": {
     "url": "https://github.com/zeratax/dmnd.sh/issues"

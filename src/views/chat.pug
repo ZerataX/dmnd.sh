@@ -1,0 +1,23 @@
+extends layouts/default.pug
+
+block prepend meta
+  - var title = 'chat';
+  - var description = 'chat with the diamonds circle'
+
+block content
+  h2 chat
+  p chat with the diamonds circle
+  pre
+    p
+      | just join us at 
+      a(href='//matrix.to/#/#bots_and_memes:dmnd.sh') #bots_and_memes:dmnd.sh
+      |  which is also bridged to:
+      ul
+        li
+          a(href='https://discord.gg/E3EAZVQ') discord
+        li
+          a(href='https://t.me/bots_and_memes/') telegram
+    p
+      | if you received an invite token, 
+      | you can register an account on our homeserver on the 
+      a(href='/register.html') register page
