@@ -9,41 +9,66 @@ block content
   p bridge matrix to other messengers, e.g. discord and telegram
   pre
     h3 relay bridge
-    ul
-      li telegram
-        ul
-          li invite
-            ul
-              li
-                a(href='//t.me/dmndsh_bot') telegram bot
-              li
-                a(href='//matrix.to/#/@_telegram_bot:dmnd.sh') matrix bot
-          li execute 
-            code.hljs
-              :highlight
-                /id
-            |  in the telegram channel to get the id
-          li execute 
-            code.hljs
-              :highlight
-                !telegram bridge <Telegram chat ID> [Matrix room ID]
-            |  in the matrix channel
-      li discord
-        ul
-          li invite 
-            a(href='//discordapp.com/oauth2/authorize?client_id=437370449471471618&scope=bot&permissions=607243264') discord bot
-          li follow the guide by executing
-            code.hljs
-              :highlight
-                !discord help bridge
-            |  in the matrix channel
+    h4 telegram
+    p
+      ul
+        li invite
+          ul
+            li
+              a(href='//t.me/dmndsh_bot') telegram bot
+            li
+              a(href='//matrix.to/#/@_telegram_bot:dmnd.sh') matrix bot
+        li execute in telegram channel:
+          br
+          code.hljs
+            :highlight
+              /id 
+        li execute in the matrix channel:
+          br
+          code.hljs
+            :highlight
+              !telegram bridge <Telegram chat ID> [Matrix room ID]
+    h4 discord
+    p
+      ul
+        li invite 
+          a(href='//discordapp.com/oauth2/authorize?client_id=437370449471471618&scope=bot&permissions=607243264') discord bot
+        li
+          | you should now be able on matrix to join the channel 
+          | #_discord_guildid_channelid 
+          | (https://discordapp.com/channels/guildid/channelid) 
+          | it should also now be visible in the room directory
+        li
+          | alternatively message 
+          a(href='//matrix.to/#/@_discord_bot:dmnd.sh') @_discord_bot:dmnd.sh
+          |  with:
+          br
+          code.hljs
+            :highlight
+              !discord help bridge
+      | for more information take a look at the official 
+      a(href='//github.com/Half-Shot/matrix-appservice-discord/blob/master/docs/howto.md') github docs
+      |  page
     h3 puppetting bridge
     p
       | additionaly you can puppet your telegram account with your matrix account,
       | just message: 
       a(href='//matrix.to/#/@_telegram_bot:dmnd.sh') @_telegram_bot:dmnd.sh
-      |  with 
+      |  with: 
+      br
       code.hljs
         :highlight
-          help
-      |  for more information
+          !telegram login
+      br
+      | for more information take a look at the official 
+      a(href='//github.com/tulir/mautrix-telegram/wiki/Authentication') github wiki
+      |  page
+    h3 projects used
+    p
+      a(href='//matrix.to/#/@tulir:maunium.net') Tulir's
+      |  
+      a(href='//github.com/tulir/mautrix-telegram/') mautrix-telegram
+      br
+      a(href='//matrix.to/#/@Half-Shot:half-shot.uk') Half-Shot's
+      |  
+      a(href='//github.com/Half-Shot/matrix-appservice-discord/') matrix-appservice-discord
