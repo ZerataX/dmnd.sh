@@ -1,0 +1,51 @@
+extends layouts/default.pug
+
+block prepend meta
+  - var title = 'acknowledgements';
+  - var description = 'projects used to power diamonds'
+
+block content
+  h2 acknowledgements
+  p diamonds makes use of a lot of amazing open source projects listed here
+  pre
+    h3 matrix
+    p
+      | all our communications happens over our matrix homeserver, 
+      | we use the main implementation of the spec 
+      a(href='//github.com/matrix-org/synapse/issues') matrix-synapse
+      br
+      | by the guys over at 
+      a(href='//matrix.org') matrix.org
+      | .
+    p
+      | as an integration manager we use 
+      a(href='//matrix.to/#/@travis:t2l.io') Travis
+      | ' 
+      a(href='//github.com/turt2live/matrix-dimension/') matrix-dimension
+      br
+      | additionaly we use his 
+      a(href='//github.com/turt2live/matrix-monitor-bot/') matrix-monitor-bot
+      |  to check out 
+      br
+      | our lag to other homeservers.
+    p
+      | for video chat we use 
+      a(href='//github.com/jitsi/jitsi-meet/') jitsi-meet
+      br
+      | and for quickly working on collaborative documents we host 
+      a(href='//github.com/ether/etherpad-lite') etherpad
+    h3 bridges
+    p
+      a(href='//matrix.to/#/@tulir:maunium.net') Tulir
+      | 's 
+      a(href='//github.com/tulir/mautrix-telegram/') mautrix-telegram
+      br
+      a(href='//matrix.to/#/@Half-Shot:half-shot.uk') Half-Shot
+      | 's 
+      a(href='//github.com/Half-Shot/matrix-appservice-discord/') matrix-appservice-discord
+    h3 games
+    p
+      | the 
+      a(href='//www.factorio.com') factorio
+      |  server we host was setup with this great 
+      a(href='//gist.github.com/othyn/e1287fd937c1e267cdbcef07227ed48c') guide
