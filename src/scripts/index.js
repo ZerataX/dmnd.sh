@@ -1,45 +1,75 @@
 import { getParameterByName } from './url_query'
 
-export function cube(x) {
-  return x**3;
-}
-
-window.onload = function () {
-  // set token input to "?token=" query parameter
-  document.getElementById('token').value = getParameterByName("token");
-
-  // html5 validators
-  var username = document.getElementById("username");
-  var password = document.getElementById("password");
-  var confirm_password = document.getElementById("confirm_password");
-  var token = document.getElementById("token");
-
-  username.addEventListener("input", function (event) {
-    if (username.validity.typeMismatch) {
-      username.setCustomValidity("format: @username:matrix.org");
-    } else {
-      username.setCustomValidity("");
+var DIAMONDS = {
+  common: {
+    init: function(){
+      // application wide code
     }
-  });
+  },
+  register : {
+    init : function(){
+      console.log("register");
+      // Place the logic pertaining to the page with ID 'register' here...
+      // set token input to "?token=" query parameter
+      if (getParameterByName("token")) {
+        document.getElementById('token').value = getParameterByName("token");
+      }
+      // html5 validators
+      var username = document.getElementById("username");
+      var password = document.getElementById("password");
+      var confirm_password = document.getElementById("confirm_password");
+      var token = document.getElementById("token");
 
-  token.addEventListener("input", function (event) {
-    if (token.validity.typeMismatch) {
-      token.setCustomValidity("case-sensitive, e.g: SardineImpactReport");
-    } else {
-      token.setCustomValidity("");
-    }
-  });
+      username.addEventListener("input", function (event) {
+        if (username.validity.typeMismatch) {
+          username.setCustomValidity("format: @username:matrix.org");
+        } else {
+          username.setCustomValidity("");
+        }
+      });
 
-  function validatePassword(){
-    if(password.value != confirm_password.value) {
-      confirm_password.setCustomValidity("passwords don't match");
-    } else {
-      confirm_password.setCustomValidity("");
+      token.addEventListener("input", function (event) {
+        if (token.validity.typeMismatch) {
+          token.setCustomValidity("case-sensitive, e.g: SardineImpactReport");
+        } else {
+          token.setCustomValidity("");
+        }
+      });
+
+      function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("passwords don't match");
+        } else {
+          confirm_password.setCustomValidity("");
+        }
+      }
+
+
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword
     }
   }
+}
 
+var UTIL = {
+    exec: function(controller, action) {
+        var ns = DIAMONDS;
 
-  password.onchange = validatePassword;
-  confirm_password.onkeyup = validatePassword
+        action = (action === undefined) ? "init" : action;
+        if (controller !== "" && ns[controller] && typeof ns[controller][action] == "function") {
+            ns[controller][action]();
+        }
+    },
+    init: function() {
+        var body = document.body,
+            controller = body.getAttribute("data-controller"),
+            action = body.getAttribute("data-action");
+        UTIL.exec("common");
+        UTIL.exec(controller);
+        UTIL.exec(controller, action);
+    }
+};
 
+window.onload = function () {
+  UTIL.init();
 }
