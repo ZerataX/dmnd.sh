@@ -7,7 +7,6 @@ block prepend meta
 block content
   h2 chat
   p chat with the diamonds circle
-  pre
   h3 channels
   p  just join us at
   a(href='//matrix.to/#/#bots_and_memes:dmnd.sh') #bots_and_memes:dmnd.sh
@@ -16,24 +15,10 @@ block content
     |  and 
     a(href='https://t.me/bots_and_memes/') telegram
   br
-  h2 register
-  p if you received an invite token you can now register here
-  form(action='/register')
-    label(for='username')  Enter your username:
-    br
-    input#username(name='username', type='text', required='', pattern='^@?[a-zA-Z_\\-=\\.\\/0-9]+(:[a-zA-Z\\-\\.:\\/0-9]+)?$', minlength='1', maxlength='200')
-    br
-    label(for='password') Enter your password:
-    br
-    input#password(name='password', type='password', required='', minlength='8', maxlength='128')
-    br
-    label(for='confirm_password') Repeat your password:
-    br
-    input#confirm_password(name='confirm', type='password', required='')
-    br
-    label(for='token') Enter your invite token:
-    br
-    input#token(name='token', type='text', required='', pattern='^([A-Z][a-z]+)+$')
-    br
-    br
-    input(type='submit')
+  h3 register
+  p 
+  | if you received an invite token you can now register over at the
+  br
+  a(href='/register.html') registration page
+  br
+  br

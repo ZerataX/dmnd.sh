@@ -1,0 +1,31 @@
+extends layouts/default.pug
+
+block prepend meta
+  - var title = 'register';
+  - var description = 'register your diamonds matrix account'
+
+block content
+  h2 register
+  p
+  | the registration requires a secret token
+  br
+  | ask other diamonds memberes to receive one
+  form(action='/register')
+    label(for='username')  Enter your username:
+    br
+    input#username(name='username', type='text', required='', pattern='^@?[a-zA-Z_\\-=\\.\\/0-9]+(:[a-zA-Z\\-\\.:\\/0-9]+)?$', minlength='1', maxlength='200')
+    br
+    label(for='password') Enter your password:
+    br
+    input#password(name='password', type='password', required='', minlength='8', maxlength='128')
+    br
+    label(for='confirm_password') Repeat your password:
+    br
+    input#confirm_password(name='confirm', type='password', required='')
+    br
+    label(for='token') Enter your invite token:
+    br
+    input#token(name='token', type='text', required='', pattern='^([A-Z][a-z]+)+$')
+    br
+    br
+    input(type='submit', value='register')
