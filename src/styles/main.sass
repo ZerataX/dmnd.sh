@@ -47,15 +47,16 @@ nav
   font-weight: 500
   white-space: nowrap
 
-input
-  &:invalid
-    border: 2px dashed $warning
-
-  &:valid
-    border: 2px solid $no-warning
-
-  &[type='submit']
+form
+  input
     width: 100%
+
+    &:invalid
+      border: 2px dashed $warning
+
+    &:valid
+      border: 2px solid $no-warning
+
 
 .center
   align-items: center
