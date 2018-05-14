@@ -47,6 +47,16 @@ nav
   font-weight: 500
   white-space: nowrap
 
+input
+  &:invalid
+    border: 2px dashed $warning
+
+  &:valid
+    border: 2px solid $no-warning
+
+  &[type='submit']
+    width: 100%
+
 .center
   align-items: center
   display: flex

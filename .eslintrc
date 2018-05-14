@@ -6,7 +6,8 @@
     "rules": {
         "strict": 0,
         "no-console": 1,
-        "mocha/no-exclusive-tests": "error"
+        "no-unused-vars": 1,
+        "mocha/no-exclusive-tests": "error",
     },
     "extends": "eslint:recommended",
     "env": {
