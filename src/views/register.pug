@@ -9,12 +9,12 @@ block content
   p
   | the registration requires a secret token
   br
-  | ask other diamonds memberes to receive one
+  | ask other diamonds members to receive one
   br
   form(action='/register')
     label(for='username')  Enter your username:
     br
-    input#username(name='username', type='text', required='', pattern='^@?[a-zA-Z_\\-=\\.\\/0-9]+(:[a-zA-Z\\-\\.:\\/0-9]+)?$', minlength='1', maxlength='200')
+    input#username(name='username', type='text', required='', pattern='^@?[a-zA-Z_\\-=\\.\\/0-9]+(:dmnd\.sh)?$', minlength='1', maxlength='200')
     br
     label(for='password') Enter your password:
     br

@@ -8,8 +8,6 @@ var DIAMONDS = {
   },
   register : {
     init : function(){
-      console.log("register");
-      // Place the logic pertaining to the page with ID 'register' here...
       // set token input to "?token=" query parameter
       if (getParameterByName("token")) {
         document.getElementById('token').value = getParameterByName("token");
@@ -43,7 +41,6 @@ var DIAMONDS = {
           confirm_password.setCustomValidity("");
         }
       }
-
 
       password.onchange = validatePassword;
       confirm_password.onkeyup = validatePassword
