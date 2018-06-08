@@ -8,6 +8,8 @@ install:
 - npm install
 script:
 - npm run deploy
+after_script:
+- npm run coveralls
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_33acfc4c9d13_key -iv $encrypted_33acfc4c9d13_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"
@@ -19,5 +21,3 @@ deploy:
   script: bash scripts/deploy.sh
   on:
     branch: master
-after_success:
-- npm run coveralls
