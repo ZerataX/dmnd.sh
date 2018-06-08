@@ -48,6 +48,7 @@ var DIAMONDS = {
   }
 }
 
+// based on https://www.viget.com/articles/extending-paul-irishs-comprehensive-dom-ready-execution/
 var UTIL = {
     exec: function(controller, action) {
         var ns = DIAMONDS;
