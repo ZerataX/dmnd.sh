@@ -1,6 +1,9 @@
 # ignore distributed website
 dist/
 
+# editor
+.vscode/
+
 # Logs
 logs
 *.log
