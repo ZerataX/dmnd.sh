@@ -3,3 +3,4 @@ coverage/**
 **/vendor/*.js
 dist/**
 test/**
+karma.conf.js

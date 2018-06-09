@@ -7,7 +7,7 @@
         "strict": 0,
         "no-console": 1,
         "no-unused-vars": 1,
-        "mocha/no-exclusive-tests": "error",
+        "mocha/no-exclusive-tests": "error"
     },
     "extends": "eslint:recommended",
     "env": {
