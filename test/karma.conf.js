@@ -13,17 +13,16 @@ module.exports = function (config) {
 
         frameworks: ['browserify', 'mocha', 'chai'],
         plugins: [
+            'karma-browserify',
             'karma-chrome-launcher',
             'karma-coverage',
-            'karma-coveralls',
             'karma-chai',
             'karma-mocha',
-            'karma-mocha-reporter',
-            'karma-browserify',
+            'karma-mocha-reporter'
         ],
 
         preprocessors: {
-            './src/scripts/**/*.js': ['browserify'],
+            './src/scripts/**/*.js': ['browserify', 'coverage'],
             './test/**/*.js': ['browserify']
         },
         browserify: {
@@ -39,7 +38,7 @@ module.exports = function (config) {
                 ]
             ]
         },
-        reporters: ['coverage', 'coveralls', 'mocha'],
+        reporters: ['coverage', 'mocha'],
         coverageReporter: {
             reporters: [{type: 'text'}, {
                 type: 'html',

@@ -45,7 +45,6 @@
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
-    "karma-coveralls": "^1.2.1",
     "karma-mocha": "^1.3.0",
     "karma-mocha-reporter": "^2.2.5",
     "live-server": "^1.2.0",
@@ -84,7 +83,8 @@
     "watch": "npm-run-all --parallel watch:css watch:js watch:html",
     "live": "live-server dist/",
     "deploy": "npm run setup && npm run build",    
-    "test": "karma start --single-run --browsers ChromeHeadlessNoSandbox --reporters mocha,coverage,coveralls test/karma.conf.js",
-    "pretest": "npm run lint"
+    "test": "karma start --single-run --browsers ChromeHeadlessNoSandbox test/karma.conf.js",
+    "pretest": "npm run lint",
+    "report-coverage": "cat ./coverage/lcov/lcov.info | coveralls"
   }
 }
