@@ -1,3 +1,5 @@
+/* global __dirname */
+/* eslint-env mocha */
 import path from 'path';
 import sassTrue from 'sass-true';
 

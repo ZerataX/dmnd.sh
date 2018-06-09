@@ -2,5 +2,4 @@ node_modules/*
 coverage/**
 **/vendor/*.js
 dist/**
-test/**
 karma.conf.js

@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import assert from 'assert';
 import diamond from '../src/scripts/diamond.js'
 
