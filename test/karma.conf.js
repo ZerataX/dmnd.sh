@@ -1,3 +1,4 @@
+var istanbul = require('browserify-istanbul');
 process.env.CHROME_BIN = require('puppeteer').executablePath()
 
 module.exports = function (config) {
@@ -22,22 +23,17 @@ module.exports = function (config) {
         ],
 
         preprocessors: {
-            './src/scripts/**/*.js': ['browserify', 'coverage'],
+            './src/scripts/**/*.js': ['browserify'],
             './test/**/*.js': ['browserify']
         },
         browserify: {
             debug: true,
+            extensions: ['.js'],
             transform: [
-                [
-                  "babelify",
-                  {
-                    "presets": [
-                      "env"
-                    ]
-                  }
-                ]
+                ['babelify', { presets: ['env'], plugins: ['istanbul'] }]
             ]
         },
+
         reporters: ['coverage', 'mocha'],
         coverageReporter: {
             reporters: [{type: 'text'}, {
