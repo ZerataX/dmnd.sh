@@ -10,9 +10,14 @@ block content
     p
     | the registration requires a secret token
     br
+    | if you don't already have one, 
     | ask other diamonds members to receive one
     br
-    form(action='/register')
+    | registration does not require a email, 
+    | just a username and a password that's longer than 8 characters.
+    br
+    br
+    form(action='/register' method='post')#registration
       label(for='username')  Enter your username:
       br
       input#username(name='username', type='text', required='', pattern='^@?[a-zA-Z_\\-=\\.\\/0-9]+(:dmnd\.sh)?$', minlength='1', maxlength='200')
@@ -31,3 +36,11 @@ block content
       br
       br
       input(type='submit', value='register')
+    #success.hidden
+      h3.center 💎 You're succesfully registered! 💎
+      h4#welcome Welcome {{user}} to diamonds!
+      p login with your client of choice, we recommend: 
+        a(href='https://about.riot.im/') Riot 
+      p or take a look over at: 
+        br
+        a(href='https://matrix.org/docs/projects/try-matrix-now.html') https://matrix.org/docs/projects/try-matrix-now.html
