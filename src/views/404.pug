@@ -1,0 +1,16 @@
+extends layouts/default.pug
+
+block prepend meta
+  - var title = '404';
+  - var description = 'The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.'
+
+block content
+    pre.title
+        code
+        | ██╗  ██╗ ██████╗ ██╗  ██╗
+        | ██║  ██║██╔═████╗██║  ██║
+        | ███████║██║██╔██║███████║
+        | ╚════██║████╔╝██║╚════██║
+        |      ██║╚██████╔╝     ██║
+        |      ╚═╝ ╚═════╝      ╚═╝
+    h3 this page doesn't exist
